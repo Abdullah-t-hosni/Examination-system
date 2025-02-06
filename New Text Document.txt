@@ -1,0 +1,35 @@
+ -------------------        -------------------
+     Question                    Answer       
+-------------------         -------------------
+  - Header: string            AnswerId: int 
+  - Body: string             AnswerText: str 
+  - Mark: int               -------------------
+- AnswerList: List<Answer> 
+-------------------
+        ^
+        |
+        | (Inheritance)
+        |
++-------------------+        -------------------
+| TrueFalseQuestion |        |    MCQQuestion    |
++-------------------+        +-------------------+
+| + DisplayQuestion |        | + DisplayQuestion |
++-------------------+        +-------------------+
+
++-------------------+        +-------------------+
+|       Exam        |        |     Subject       |
++-------------------+        +-------------------+
+| - ExamTime: DateTime |     | - SubjectId: int  |
+| - NumberOfQuestions: int | | - SubjectName: str|
+| - Questions: List<Question>| - Exam: Exam      |
+| + ShowExam         |        +-------------------+
++-------------------+
+        ^
+        |
+        | (Inheritance)
+        |
++-------------------+        +-------------------+
+|   FinalExam       |        |  PracticalExam    |
++-------------------+        +-------------------+
+| + ShowExam        |        | + ShowExam        |
++-------------------+        +-------------------+
